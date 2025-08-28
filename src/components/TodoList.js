@@ -29,10 +29,16 @@ function TodoList({
     // TODO: Implémenter le tri par date, priorité, etc.
 
     if (sortBy === "created") {
-      console.log("SortBy Created");
-
       filtered = todos.sort((a, b) => {
         return new Date(b.createdAt) - new Date(a.createdAt);
+      });
+    } else if (sortBy === "priority") {
+      return todos.sort((a, b) => {
+        return a.priority - b.priority;
+      });
+    } else if (sortBy === "dueDate") {
+      filtered = todos.sort((a, b) => {
+        return new Date(b.dueDate) - new Date(a.dueDate);
       });
     }
 
