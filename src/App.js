@@ -99,7 +99,7 @@ function App() {
 
         <TodoList
           todos={todos}
-          onToggle={toggleTodo}
+          onToggleTodo={toggleTodo}
           onDeleteTodo={deleteTodo}
           onUpdateTodo={updateTodo}
         />
