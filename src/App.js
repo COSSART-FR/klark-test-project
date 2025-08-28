@@ -79,7 +79,6 @@ function App() {
 
     const todoToDelete = todos.find((data) => data.id === id);
     const newList = todos.filter((data) => data.id !== id);
-    console.log("LAAAAA", [...newList, { ...todoToDelete, ...updatedData }]);
     
     setTodos([...newList, { ...todoToDelete, ...updatedData }]);
   };

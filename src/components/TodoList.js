@@ -32,23 +32,19 @@ function TodoList({
       console.log("SortBy Created");
 
       filtered = todos.sort((a, b) => {
-        return new Date(b.date) - new Date(a.date);
+        return new Date(b.createdAt) - new Date(a.createdAt);
       });
     }
 
     return filtered;
   };
 
-  // BUG INTENTIONNEL: Fonction de suppression manquante
   const handleDelete = (id) => {
-    // TODO: Implémenter la suppression
     console.log("Suppression de la tâche:", id);
     onDeleteTodo(id);
   };
 
-  // BUG INTENTIONNEL: Fonction de modification manquante
   const handleUpdate = (id, updatedData) => {
-    // TODO: Implémenter la modification
     console.log("Modification de la tâche:", id, updatedData);
     onUpdateTodo(id, updatedData);
   };
