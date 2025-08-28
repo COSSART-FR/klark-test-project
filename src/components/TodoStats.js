@@ -128,7 +128,6 @@ function TodoStats({ todos }) {
         </div>
       )}
 
-      {/* BUG INTENTIONNEL: Graphique de progression manquant */}
       <div className="progress-section">
         <h3>Progression</h3>
         <div className="progress-bar">
