@@ -14,11 +14,13 @@ function TodoList({
 
   // BUG INTENTIONNEL: Fonction de filtrage manquante
   const getFilteredTodos = () => {
-    console.log("getFilteredTodos");
+    console.log("getFilteredTodos", filter);
 
     let filtered = todos;
 
     if (filter === "completed") {
+      console.log("ONLY completed");
+      
       filtered = todos.filter((todo) => todo.completed);
     } else if (filter === "pending") {
       filtered = todos.filter((todo) => !todo.completed);
@@ -28,19 +30,21 @@ function TodoList({
     // TODO: Implémenter le tri par date, priorité, etc.
 
     if (sortBy === "created") {
-      filtered = todos.sort((a, b) => {
+      filtered = filtered.sort((a, b) => {
         return new Date(b.createdAt) - new Date(a.createdAt);
       });
     } else if (sortBy === "priority") {
-      return todos.sort((a, b) => {
+      return filtered.sort((a, b) => {
         return a.priority - b.priority;
       });
     } else if (sortBy === "dueDate") {
-      filtered = todos.sort((a, b) => {
+      filtered = filtered.sort((a, b) => {
         return new Date(b.dueDate) - new Date(a.dueDate);
       });
     }
 
+    console.log('LISTE FILTR2', filtered);
+    
     return filtered;
   };
 
