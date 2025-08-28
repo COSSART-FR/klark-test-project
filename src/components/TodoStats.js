@@ -2,7 +2,6 @@ import React from "react";
 import "./TodoStats.css";
 
 function TodoStats({ todos }) {
-  // BUG INTENTIONNEL: Calculs des statistiques manquants
   const calculateStats = () => {
     if (!todos || todos.length === 0) {
       return {
@@ -20,7 +19,6 @@ function TodoStats({ todos }) {
     const completed = todos.filter((todo) => todo.completed).length;
     const pending = total - completed;
 
-    // BUG INTENTIONNEL: Calcul des priorités manquant
     const highPriority = todos.filter(
       (todo) => todo.priority === "high"
     ).length;

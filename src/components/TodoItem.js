@@ -11,13 +11,11 @@ function TodoItem({ todo, onToggle, onDelete, onUpdate }) {
     dueDate: todo.dueDate || "",
   });
 
-  // BUG INTENTIONNEL: Fonction de sauvegarde manquante
   const handleSave = () => {
     onUpdate(todo.id, editData);
     setIsEditing(false);
   };
 
-  // BUG INTENTIONNEL: Fonction d'annulation manquante
   const handleCancel = () => {
     setEditData({
       title: todo.title,

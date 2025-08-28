@@ -9,7 +9,6 @@ function TodoList({
   onUpdateTodo,
   loading,
 }) {
-  // BUG INTENTIONNEL: État de filtrage manquant
   const [filter, setFilter] = useState("all");
   const [sortBy, setSortBy] = useState("created");
 
