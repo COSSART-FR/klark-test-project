@@ -58,7 +58,7 @@ function TodoForm({ onAdd }) {
             type="text"
             id="title"
             name="title"
-            value={formData.title}
+            //value={formData.title}
             onChange={handleInputChange}
             placeholder="Entrez le titre de la tâche"
             className={errors.title ? "error" : ""}
@@ -73,7 +73,7 @@ function TodoForm({ onAdd }) {
           <textarea
             id="description"
             name="description"
-            value={formData.description}
+            //value={formData.description}
             onChange={handleInputChange}
             placeholder="Description optionnelle"
             rows="3"
@@ -85,7 +85,7 @@ function TodoForm({ onAdd }) {
           <select
             id="priority"
             name="priority"
-            value={formData.priority}
+            //value={formData.priority}
             onChange={handleInputChange}
           >
             <option value="low">Basse</option>
@@ -100,7 +100,7 @@ function TodoForm({ onAdd }) {
             type="date"
             id="dueDate"
             name="dueDate"
-            value={formData.dueDate}
+            //value={formData.dueDate}
             onChange={handleInputChange}
           />
         </div>
