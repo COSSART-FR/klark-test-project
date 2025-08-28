@@ -12,7 +12,6 @@ function TodoList({
   const [filter, setFilter] = useState("all");
   const [sortBy, setSortBy] = useState("created");
 
-  // BUG INTENTIONNEL: Fonction de filtrage manquante
   const getFilteredTodos = () => {
     console.log("getFilteredTodos", filter);
 
