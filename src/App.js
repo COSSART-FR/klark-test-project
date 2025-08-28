@@ -23,6 +23,10 @@ function App() {
       );
       const data = await response.json();
 
+      if (!data) {
+        return;
+      }
+
       const todosList = data.slice(0, 5).map((data) => ({
         ...data,
         description: "",
