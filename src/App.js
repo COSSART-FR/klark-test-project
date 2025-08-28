@@ -73,7 +73,16 @@ function App() {
     setTodos(newList);
   };
 
-  const updateTodo = (id, newText) => {};
+  const updateTodo = (id, updatedData) => {
+    console.log("id", id);
+    console.log("updatedData", updatedData);
+
+    const todoToDelete = todos.find((data) => data.id === id);
+    const newList = todos.filter((data) => data.id !== id);
+    console.log("LAAAAA", [...newList, { ...todoToDelete, ...updatedData }]);
+    
+    setTodos([...newList, { ...todoToDelete, ...updatedData }]);
+  };
 
   if (loading) {
     return <div>Chargement...</div>;
@@ -93,7 +102,7 @@ function App() {
           todos={todos}
           onToggle={toggleTodo}
           onDeleteTodo={deleteTodo}
-          onUpdate={updateTodo}
+          onUpdateTodo={updateTodo}
         />
 
         <TodoStats todos={todos} />
