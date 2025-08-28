@@ -42,12 +42,12 @@ function App() {
     }
   };
 
-  const addTodo = (text) => {
+  const addTodo = (todo) => {
     console.log("addTodo");
 
     const newTodo = {
+      ...todo,
       id: Date.now(),
-      title: text,
       completed: false,
     };
     //todos.push(newTodo);
