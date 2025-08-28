@@ -13,7 +13,7 @@ function TodoForm({ onAdd }) {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    console.log(name, value);
+    //console.log(name, value);
 
     formData[name] = value;
     setFormData(formData);

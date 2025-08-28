@@ -22,7 +22,15 @@ function App() {
         "https://jsonplaceholder.typicode.com/todos"
       );
       const data = await response.json();
-      setTodos(data.slice(0, 5));
+
+      const todosList = data.slice(0, 5).map((data) => ({
+        ...data,
+        description: "",
+        priority: "medium",
+        dueDate: "",
+      }));
+
+      setTodos(todosList);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -31,13 +39,17 @@ function App() {
   };
 
   const addTodo = (text) => {
+    console.log("addTodo");
+
     const newTodo = {
       id: Date.now(),
       title: text,
       completed: false,
     };
-    todos.push(newTodo);
-    setTodos(todos);
+    //todos.push(newTodo);
+    console.log([...todos, newTodo]);
+
+    setTodos([...todos, newTodo]);
   };
 
   const toggleTodo = (id) => {
