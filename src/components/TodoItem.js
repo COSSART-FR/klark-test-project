@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./TodoItem.css";
 
 function TodoItem({ todo, onToggle, onDelete, onUpdate }) {
-  // BUG INTENTIONNEL: État d'édition manquant
   const [isEditing, setIsEditing] = useState(false);
   const [editData, setEditData] = useState({
     title: todo.title,

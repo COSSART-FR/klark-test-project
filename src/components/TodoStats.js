@@ -41,23 +41,6 @@ function TodoStats({ todos }) {
     };
   };
 
-  // BUG INTENTIONNEL: Fonction de formatage des dates manquante
-  const formatDate = (dateString) => {
-    if (!dateString) return "Non définie";
-
-    try {
-      const date = new Date(dateString);
-      return date.toLocaleDateString("fr-FR", {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-      });
-    } catch (error) {
-      return "Date invalide";
-    }
-  };
-
-  // BUG INTENTIONNEL: Fonction de calcul des tâches en retard manquante
   const getOverdueTasks = () => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
