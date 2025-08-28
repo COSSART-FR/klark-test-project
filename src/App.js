@@ -7,6 +7,8 @@ import TodoStats from "./components/TodoStats";
 function App() {
   const [todos, setTodos] = useState([]);
 
+  console.log(todos);
+
   const [loading, setLoading] = useState(undefined);
 
   const [error, setError] = useState(undefined);
@@ -32,6 +34,7 @@ function App() {
         description: "",
         priority: "medium",
         dueDate: "",
+        createdAt: new Date(),
       }));
 
       setTodos(todosList);
@@ -43,15 +46,16 @@ function App() {
   };
 
   const addTodo = (todo) => {
-    console.log("addTodo");
+    //console.log("addTodo");
 
     const newTodo = {
       ...todo,
       id: Date.now(),
       completed: false,
+      createdAt: new Date(),
     };
     //todos.push(newTodo);
-    console.log([...todos, newTodo]);
+    //console.log([...todos, newTodo]);
 
     setTodos([...todos, newTodo]);
   };
@@ -64,7 +68,10 @@ function App() {
     }
   };
 
-  const deleteTodo = (id) => {};
+  const deleteTodo = (id) => {
+    const newList = todos.filter((data) => data.id !== id);
+    setTodos(newList);
+  };
 
   const updateTodo = (id, newText) => {};
 
@@ -85,7 +92,7 @@ function App() {
         <TodoList
           todos={todos}
           onToggle={toggleTodo}
-          onDelete={deleteTodo}
+          onDeleteTodo={deleteTodo}
           onUpdate={updateTodo}
         />
 

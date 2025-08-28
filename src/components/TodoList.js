@@ -15,6 +15,8 @@ function TodoList({
 
   // BUG INTENTIONNEL: Fonction de filtrage manquante
   const getFilteredTodos = () => {
+    console.log("getFilteredTodos");
+    
     let filtered = todos;
 
     if (filter === "completed") {
@@ -26,6 +28,14 @@ function TodoList({
     // BUG INTENTIONNEL: Tri manquant
     // TODO: Implémenter le tri par date, priorité, etc.
 
+    if (sortBy === "created") {
+      console.log("SortBy Created");
+      
+      filtered = todos.sort((a, b) => {
+        return new Date(b.date) - new Date(a.date);
+      })
+    }
+      
     return filtered;
   };
 
@@ -33,6 +43,7 @@ function TodoList({
   const handleDelete = (id) => {
     // TODO: Implémenter la suppression
     console.log("Suppression de la tâche:", id);
+    onDeleteTodo(id)
   };
 
   // BUG INTENTIONNEL: Fonction de modification manquante
